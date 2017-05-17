@@ -15,7 +15,7 @@
         };
 
         service.javaException = function () {
-            return $http.get('/java_error', {
+            return $http.get('/error', {
                 method: 'GET'
             });
         };
