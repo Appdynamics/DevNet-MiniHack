@@ -1,0 +1,55 @@
+<div ng-controller="businessTransactionController" class="section">
+    <div class="left">
+        <h4>Business Transactions</h4>
+
+        <div class="content">
+            <p>The Sample App is a fruit stand inventory management system.</p>
+            
+            <p>There are four kinds of fruit currently available at the fruit stand. The stand is initially stocked with 100 apples, 100 oranges, 100 bananas, and 100 lemons. Let’s generate some load by using the Fruit Stand application.</p>
+
+            <p style="font-size:16px">Try to click below buttons to modify fruit stand inventory. </p> 
+
+            <p>Each of these operations is automatically tracked by AppDynamics as a <span class="keyword">Business Transaction</span>.</p>
+        </div>
+
+        <br>
+
+        <table class="products">
+            <p style="font-size:16px"><b> Fruit Stand Inventory </b></p>
+            <thead>
+            <tr>
+                <th>
+                    <p>Item</p>
+                </th>
+                <th class="quantity">
+                    <p>Quantity</p>
+                </th>
+                <th>
+                    <p>Action</p>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="product in products">
+                <td>
+                    <p>{{product.name}}</p>
+                </td>
+                <td class="quantity">
+                    <p style="margin-top: 9px;">{{product.stock}}</p>
+                </td>
+                <td>
+                    <button type="button" ng-click="product.save(false)" ng-disabled="product.loading" class="gray"> Stock One
+                    </button>
+
+                    <button type="button" ng-click="product.save(true)" ng-disabled="product.loading" class="gray"> Sell One
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+       
+        <button type="button" class="gray" style="margin-top: 23px; margin-bottom: 40px;" ng-click="reset()"></span> Restock </button>
+
+    </div>
+
+</div>
