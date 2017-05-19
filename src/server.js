@@ -78,6 +78,7 @@ server.get('/exception', function (serverRequest, response) {
 
 server.listen(3000, '0.0.0.0', function () {
   console.log('Node Server Started');
+  console.log('Open your browser to: http://localhost:3000')
 });
 
 server.on('error', function (e) {
